@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 class PantallaAdvertencias extends StatelessWidget {
+  const PantallaAdvertencias({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +18,7 @@ class PantallaAdvertencias extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pushNamed(context, '/reglas'),
             child: Text('Ver Reglas'),
-          )
+          ),
         ],
       ),
     );

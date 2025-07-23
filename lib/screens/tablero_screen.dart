@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Casilla {
   final int numero;
   final String color;
@@ -15,14 +16,22 @@ final List<Casilla> casillas = [
 ];
 
 class PantallaTablero extends StatelessWidget {
+  const PantallaTablero({super.key});
+
   Color obtenerColor(String color) {
     switch (color) {
-      case 'rojo': return Colors.red;
-      case 'negro': return Colors.black;
-      case 'amarillo': return Colors.yellow;
-      case 'azul': return Colors.blue;
-      case 'verde': return Colors.green;
-      default: return Colors.grey;
+      case 'rojo':
+        return Colors.red;
+      case 'negro':
+        return Colors.black;
+      case 'amarillo':
+        return Colors.yellow;
+      case 'azul':
+        return Colors.blue;
+      case 'verde':
+        return Colors.green;
+      default:
+        return Colors.grey;
     }
   }
 
@@ -32,7 +41,9 @@ class PantallaTablero extends StatelessWidget {
       appBar: AppBar(title: Text('Tablero')),
       body: GridView.builder(
         padding: EdgeInsets.all(10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 6,
+        ),
         itemCount: casillas.length,
         itemBuilder: (context, index) {
           final casilla = casillas[index];
@@ -47,7 +58,7 @@ class PantallaTablero extends StatelessWidget {
                     TextButton(
                       onPressed: () => Navigator.pop(context),
                       child: Text('Cerrar'),
-                    )
+                    ),
                   ],
                 ),
               );

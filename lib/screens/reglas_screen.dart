@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 class PantallaReglas extends StatelessWidget {
+  const PantallaReglas({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +23,7 @@ class PantallaReglas extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/tablero'),
               child: Text('Ir al Tablero'),
-            )
+            ),
           ],
         ),
       ),
