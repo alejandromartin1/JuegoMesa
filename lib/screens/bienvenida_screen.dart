@@ -51,6 +51,7 @@ class BienvenidaScreen extends StatelessWidget {
                       horizontal: 32,
                       vertical: 15,
                     ),
+
                     textStyle: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
