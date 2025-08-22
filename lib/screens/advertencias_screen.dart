@@ -25,57 +25,89 @@ class PantallaAdvertencias extends StatelessWidget {
               ),
             ),
           ),
-          // Contenido centrado
+          // Contenido centrado en tarjeta
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "⚠ Advertencia ⚠",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                    shadows: [
-                      Shadow(
-                        color: Colors.black,
-                        blurRadius: 4,
-                        offset: Offset(2, 2),
-                      ),
-                    ],
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.9),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
                   ),
-                ),
-                Text(
-                  "Debes acumular al menos 100 puntos para ganar.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: const Color.fromARGB(255, 255, 0, 0),
-                    fontSize: 18,
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(
+                    Icons.warning_amber_rounded,
+                    color: Color.fromARGB(255, 200, 30, 30),
+                    size: 60,
                   ),
-                ),
-
-                const SizedBox(height: 30),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/reglas');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 253, 253),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 15,
-                    ),
-
-                    textStyle: const TextStyle(
-                      fontSize: 18,
+                  const SizedBox(height: 10),
+                  Text(
+                    "⚠ ADVERTENCIA ⚠",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 200, 30, 30),
                       fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                      shadows: [
+                        //Sombra a las letras
+                        Shadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 4,
+                          offset: const Offset(2, 2),
+                        ),
+                      ],
                     ),
-                    foregroundColor: Color.fromARGB(255, 2, 105, 38),
                   ),
-                  child: const Text('Ver Reglas'),
-                ),
-              ],
+                  const SizedBox(height: 14),
+                  const Text(
+                    "Debes acumular al menos 100 puntos para ganar.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color.fromARGB(221, 223, 24, 24),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      height: 1,
+                    ),
+                  ),
+                  const SizedBox(height: 25),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/reglas');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 15,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: const BorderSide(
+                          color: Color.fromARGB(255, 240, 78, 78), // borde rojo
+                          width: 2,
+                        ),
+                      ),
+                      elevation: 6,
+                      shadowColor: Colors.black,
+                      foregroundColor: const Color.fromARGB(255, 231, 26, 26),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: const Text('Ver Reglas'),
+                  ),
+                ],
+              ),
             ),
           ),
           Align(
